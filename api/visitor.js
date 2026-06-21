@@ -55,11 +55,21 @@ export default {
       const body = await request.json();
 
       const visitorLog = {
-        ip: getVisitorIp(request),
+        ip: getVisitorIp(req),
+
+        deviceBrand: body.deviceBrand || null,
+        deviceName: body.deviceName || null,
+        deviceType: body.deviceType || null,
+        osName: body.osName || null,
+        osVersion: body.osVersion || null,
+        isMobile: body.isMobile ?? null,
+
         userAgent: body.userAgent || null,
         language: body.language || null,
         languages: body.languages || null,
         platform: body.platform || null,
+        maxTouchPoints: body.maxTouchPoints || null,
+
         screenWidth: body.screenWidth || null,
         screenHeight: body.screenHeight || null,
         viewportWidth: body.viewportWidth || null,
