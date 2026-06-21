@@ -22,30 +22,30 @@ export const memories = [
 ];
 
 export const wishes = [
-  "Semoga semua hal baik datang pelan-pelan, lalu menetap lama di hidupmu.",
-  "Semoga kamu selalu merasa cukup dicintai, cukup dihargai, dan cukup kuat untuk semua mimpimu.",
-  "Semoga aku bisa terus menjadi salah satu alasan kecil kamu tersenyum."
+  "Semoga kamu selalu diberikan segala hal baik dalam hidup, kebahagiaan yang cukup, hati yang tenang, dan orang-orang baik di sekelilingmu.",
+  "Semoga kamu selalu diberi kesabaran dalam menjalani setiap keadaan, tetap kuat, tetap lembut, dan tetap sayang sama aku.",
+  "Semoga kamu sukses dalam setiap langkahmu, dimudahkan rezeki dan impianmu, serta bahagia di dunia dan akhirat."
 ];
 
 export const gallery = [
   {
     type: "image",
     src: "/assets/gambar1.JPEG",
-    title: "Memory 1"
+    title: "Fore BxChange"
   },
   {
     type: "video",
     src: "/assets/vid1.MOV",
-    title: "Video Kita"
+    title: "PhotoBooth Blok M"
   },
   {
     type: "image",
     src: "/assets/gambar2.PNG",
-    title: "Memory 2"
+    title: "Bakmie GM Aeon"
   },
   {
     type: "image",
     src: "/assets/gambar3.JPG",
-    title: "Memory 3"
+    title: "Blok M"
   }
 ];

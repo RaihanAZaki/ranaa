@@ -21,17 +21,17 @@ export default function FinalMessage({ onFireworks }) {
             I Love You ♡
           </h2>
           <p className="mt-6 text-sm leading-7 text-slate-700 sm:text-base">
-            Terima kasih sudah hadir di hidupku dan menjadi bagian terindah dalam setiap hariku.
+            Terima kasih sudah hadir di hidupku dan menjadi bagian terindah dalam hidupku ya sayang.
           </p>
           <p className="mt-5 text-xl font-bold text-deepRose animate-heartbeat sm:text-2xl">
-            Selamat ulang tahun, cintaku! ♥
+            Selamat ulang tahun, cantikku! ♥
           </p>
           <button
             type="button"
             onClick={onFireworks}
             className="mt-9 rounded-full bg-roseLove px-8 py-4 font-bold text-white shadow-xl shadow-rose-300 transition hover:-translate-y-1 hover:bg-deepRose"
           >
-            Fireworks Finale ✨
+            Fireworks ✨
           </button>
         </div>
       </Reveal>

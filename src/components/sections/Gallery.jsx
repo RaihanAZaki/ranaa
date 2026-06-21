@@ -37,7 +37,7 @@ export default function Gallery() {
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
-            Bagian ini bisa berisi foto dan video kenangan kita.
+            Bagian ini kedepannya akan selalu bertambah sesuai dengan kenangan kita seberapa banyak yak.
           </p>
         </Reveal>
 

@@ -6,7 +6,7 @@ import Reveal from "../ui/Reveal";
 
 export default function LoveLetter() {
   const { ref, isVisible } = useInView(0.25);
-  const letterText = `Happy birthday, ${CONFIG.partnerName}.\n\nSemoga di umurmu yang baru ini, kamu selalu diberikan kesehatan, kebahagiaan, dan semua hal baik yang selama ini kamu impikan.\n\nTerima kasih sudah menjadi tempat pulang, teman cerita, dan alasan aku tersenyum setiap hari. Aku mungkin tidak selalu sempurna, tapi aku akan selalu berusaha menjadi orang yang bisa membuatmu merasa dicintai.\n\nAku sayang kamu, hari ini, besok, dan seterusnya.`;
+  const letterText = `Happy birthday, ${CONFIG.partnerName}.\n\nSemoga di umurmu yang baru ini, kamu selalu diberikan kesehatan, kebahagiaan, dan semua hal baik yang selama ini kamu impikan.\n\nTerima kasih sudah menjadi orang yang selalu kuat dan sabar untuk menerima aku kembali. Aku tahu kesalahan aku banyak, bahkan ada yang fatal dan mungkin sulit untuk kamu lupakan. Tapi aku benar-benar ingin terus belajar, memperbaiki diri, dan berusaha menjadi orang yang bisa membuat kamu merasa dicintai, dihargai, dan tidak sendirian.\n\nAku sayang kamu, hari ini, besok, dan seterusnya.`;
 
   return (
     <section id="letter" ref={ref} className="px-4 py-16 sm:px-6 md:px-10 md:py-20">

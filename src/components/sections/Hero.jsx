@@ -38,7 +38,7 @@ export default function Hero({ daysTogether, onFireworks }) {
           </h2>
 
           <p className="mx-auto mt-7 max-w-xl text-sm leading-7 text-slate-700 md:mx-0 md:text-base md:leading-8 animate-fade-up animate-delay-500">
-            Hari ini bukan cuma tentang bertambahnya umurmu, tapi tentang betapa bersyukurnya aku karena dunia pernah menghadirkan kamu.
+            Hari ini adalah hari yang sangat berharga buat kita berdua, karena disatu sisi Ranaa usianya bertambah dan satu sisi lagi Raihan harus makin semangat buat ke jenjang yang lebih serius, asik
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row md:items-start animate-fade-up animate-delay-700">
