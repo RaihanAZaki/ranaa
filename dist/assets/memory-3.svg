@@ -1,0 +1,9 @@
+<svg width="600" height="700" viewBox="0 0 600 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="700" rx="36" fill="#FFF1F4"/>
+  <circle cx="270" cy="190" r="160" fill="#FFD6DF" opacity="0.75"/>
+  <circle cx="370" cy="475" r="190" fill="#F65A83" opacity="0.16"/>
+  <path d="M300 218c28-60 118-50 132 16 16 75-79 122-132 182-53-60-148-107-132-182 14-66 104-76 132-16z" fill="#F65A83" opacity="0.45"/>
+  <rect x="75" y="370" width="450" height="190" rx="28" fill="white" opacity="0.9"/>
+  <text x="300" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#C63A62">Foto Kenangan 3</text>
+  <text x="300" y="505" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#7A4B58">Ganti file ini dengan foto asli</text>
+</svg>
