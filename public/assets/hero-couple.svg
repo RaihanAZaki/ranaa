@@ -1,0 +1,27 @@
+<svg width="900" height="1100" viewBox="0 0 900 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1100" rx="48" fill="#FFF1F4"/>
+  <circle cx="740" cy="145" r="190" fill="#FFD6DF" opacity="0.75"/>
+  <circle cx="150" cy="900" r="240" fill="#F65A83" opacity="0.12"/>
+  <path d="M470 255c40-85 168-72 188 22 22 106-113 173-188 258-75-85-210-152-188-258 20-94 148-107 188-22z" fill="#F65A83" opacity="0.25"/>
+  <circle cx="350" cy="430" r="116" fill="#2F2530"/>
+  <circle cx="548" cy="430" r="116" fill="#5B3741"/>
+  <circle cx="350" cy="470" r="88" fill="#F7C8B5"/>
+  <circle cx="548" cy="470" r="88" fill="#FFD2C3"/>
+  <path d="M265 852c18-156 78-245 184-245s166 89 184 245H265z" fill="#C63A62"/>
+  <path d="M420 852c18-152 78-238 177-238s155 86 172 238H420z" fill="#F65A83"/>
+  <path d="M250 430c45-130 190-166 290-63-90-12-160 14-220 80l-70-17z" fill="#2F2530"/>
+  <path d="M475 424c65-120 216-130 295-7-89-30-161-24-242 36l-53-29z" fill="#5B3741"/>
+  <circle cx="325" cy="472" r="9" fill="#44252F"/>
+  <circle cx="520" cy="472" r="9" fill="#44252F"/>
+  <path d="M366 523c37 38 89 38 126 0" stroke="#C63A62" stroke-width="12" stroke-linecap="round"/>
+  <path d="M330 692c49 55 124 78 198 55" stroke="#FFD6DF" stroke-width="24" stroke-linecap="round"/>
+  <g transform="translate(580 620)">
+    <path d="M90 140c70-66 97-116 72-153-22-32-65-24-80 13-16-37-59-45-80-13-26 37 2 87 88 153z" fill="#F65A83"/>
+    <rect x="-5" y="95" width="185" height="150" rx="22" fill="#FFD6DF"/>
+    <path d="M16 100l70 72 73-72" stroke="#F65A83" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="35" cy="80" r="34" fill="#FF8FAC"/>
+    <circle cx="90" cy="68" r="40" fill="#FF8FAC"/>
+    <circle cx="145" cy="82" r="34" fill="#FF8FAC"/>
+  </g>
+  <text x="450" y="1010" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="700" fill="#C63A62">Ganti dengan foto pasanganmu</text>
+</svg>
