@@ -3,6 +3,9 @@ import { Gift, Heart, Play, X } from "lucide-react";
 import ConfettiHearts from "../effects/ConfettiHearts";
 import MagicParticles from "../effects/MagicParticles";
 
+const YOUTUBE_URL =
+  "https://www.youtube.com/embed/E_rB5CvBY0k?rel=0&modestbranding=1";
+
 export default function GiftSurprise({ onFireworks }) {
   const [isOpen, setIsOpen] = useState(false);
   const [confettiKey, setConfettiKey] = useState(0);
@@ -28,13 +31,15 @@ export default function GiftSurprise({ onFireworks }) {
 
       {isOpen && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-900/40 px-4 backdrop-blur-sm animate-fade-in sm:px-5">
-          <div className="surprise-modal relative w-full max-w-2xl overflow-hidden rounded-[2rem] bg-white p-4 text-center shadow-2xl animate-pop-big sm:p-6">
-            <MagicParticles amount={18} />
+          <div className="relative w-full max-w-2xl overflow-hidden rounded-[2rem] bg-white p-4 text-center shadow-2xl animate-pop-big sm:p-6">
+            <div className="pointer-events-none absolute inset-0 z-0">
+              <MagicParticles amount={18} />
+            </div>
 
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="absolute right-4 top-4 z-20 rounded-full bg-white/90 p-2 text-roseLove shadow-md transition hover:bg-rose-100"
+              className="absolute right-4 top-4 z-30 rounded-full bg-white/90 p-2 text-roseLove shadow-md transition hover:bg-rose-100"
               aria-label="Close surprise"
             >
               <X className="h-5 w-5" />
@@ -52,13 +57,13 @@ export default function GiftSurprise({ onFireworks }) {
               Ini sedikit video spesial buat kamu.
             </p>
 
-            <div className="relative z-10 mt-5 overflow-hidden rounded-[1.5rem] bg-rose-50 shadow-lg shadow-rose-100">
-              <video
-                src="/assets/ucapan.MOV"
-                className="aspect-video w-full object-cover"
-                controls
-                playsInline
-                preload="metadata"
+            <div className="relative z-10 mt-5 overflow-hidden rounded-[1.5rem] bg-black shadow-lg shadow-rose-100">
+              <iframe
+                className="aspect-video w-full"
+                src={YOUTUBE_URL}
+                title="Surprise Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
               />
             </div>
 

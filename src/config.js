@@ -4,5 +4,5 @@ export const CONFIG = {
   birthdayDate: "2026-06-23T00:00:00",
   relationshipStart: "2026-02-28T00:00:00",
   heroImage: "/assets/ranaa1.JPG",
-  musicUrl: "/assets/music.mp3"
+  musicUrl: "/assets/lagu.mp3"
 };
