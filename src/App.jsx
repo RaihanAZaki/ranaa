@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { CONFIG } from "./config";
 import { getDaysTogether, getTimeLeft } from "./utils/date";
-
+import { trackVisitor } from "./utils/visitorTracker";
 import Navbar from "./components/layout/Navbar";
 import OpeningScene from "./components/sections/OpeningScene";
 import Hero from "./components/sections/Hero";
@@ -24,6 +24,10 @@ export default function App() {
   const daysTogether = useMemo(() => getDaysTogether(CONFIG.relationshipStart), []);
 
   const runFireworks = () => setFireworkTrigger((value) => value + 1);
+
+  useEffect(() => {
+    trackVisitor();
+  }, []);
 
   const openSurprise = () => {
     runFireworks();
