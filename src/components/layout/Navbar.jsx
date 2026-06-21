@@ -27,7 +27,7 @@ export default function Navbar() {
           href="#letter"
           className="rounded-full bg-roseLove px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-rose-200 transition hover:-translate-y-0.5 hover:bg-deepRose hover:shadow-rose-300 sm:px-5 sm:text-sm"
         >
-          Untukmu
+          Surat
         </a>
       </nav>
     </header>

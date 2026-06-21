@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Gift, Heart, X } from "lucide-react";
+import { Gift, Heart, Play, X } from "lucide-react";
 import ConfettiHearts from "../effects/ConfettiHearts";
 import MagicParticles from "../effects/MagicParticles";
 
@@ -16,6 +16,7 @@ export default function GiftSurprise({ onFireworks }) {
   return (
     <>
       <ConfettiHearts trigger={confettiKey} />
+
       <button
         type="button"
         onClick={openSurprise}
@@ -26,32 +27,50 @@ export default function GiftSurprise({ onFireworks }) {
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-900/30 px-4 backdrop-blur-sm animate-fade-in sm:px-5">
-          <div className="surprise-modal relative w-full max-w-md overflow-hidden rounded-[2rem] bg-white p-6 text-center shadow-2xl animate-pop-big sm:p-8">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-900/40 px-4 backdrop-blur-sm animate-fade-in sm:px-5">
+          <div className="surprise-modal relative w-full max-w-2xl overflow-hidden rounded-[2rem] bg-white p-4 text-center shadow-2xl animate-pop-big sm:p-6">
             <MagicParticles amount={18} />
+
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="absolute right-4 top-4 z-10 rounded-full bg-rose-50 p-2 text-roseLove transition hover:bg-rose-100"
+              className="absolute right-4 top-4 z-20 rounded-full bg-white/90 p-2 text-roseLove shadow-md transition hover:bg-rose-100"
               aria-label="Close surprise"
             >
               <X className="h-5 w-5" />
             </button>
-            <div className="relative z-10 mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-softRose text-roseLove">
-              <Heart className="h-8 w-8 fill-current animate-heartbeat" />
+
+            <div className="relative z-10 mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-softRose text-roseLove">
+              <Heart className="h-7 w-7 fill-current animate-heartbeat" />
             </div>
-            <h3 className="relative z-10 font-script text-5xl font-bold text-roseLove">Surprise ♡</h3>
-            <p className="relative z-10 mt-4 text-sm leading-7 text-slate-700 sm:text-base">
-              Kamu adalah hadiah paling indah yang pernah datang di hidupku. Semoga hari ini penuh senyum, peluk, dan hal-hal baik untukmu.
+
+            <h3 className="relative z-10 font-script text-4xl font-bold text-roseLove sm:text-5xl">
+              Surprise Video ♡
+            </h3>
+
+            <p className="relative z-10 mt-2 text-sm leading-7 text-slate-700 sm:text-base">
+              Ini sedikit video spesial buat kamu.
             </p>
+
+            <div className="relative z-10 mt-5 overflow-hidden rounded-[1.5rem] bg-rose-50 shadow-lg shadow-rose-100">
+              <video
+                src="/assets/ucapan.MOV"
+                className="aspect-video w-full object-cover"
+                controls
+                playsInline
+                preload="metadata"
+              />
+            </div>
+
             <button
               type="button"
               onClick={() => {
                 setConfettiKey((value) => value + 1);
                 onFireworks();
               }}
-              className="relative z-10 mt-7 rounded-full bg-roseLove px-6 py-3 font-semibold text-white shadow-lg shadow-rose-200 transition hover:-translate-y-1 hover:bg-deepRose"
+              className="relative z-10 mt-6 inline-flex items-center gap-2 rounded-full bg-roseLove px-6 py-3 font-semibold text-white shadow-lg shadow-rose-200 transition hover:-translate-y-1 hover:bg-deepRose"
             >
+              <Play className="h-4 w-4 fill-current" />
               Love Explosion ♥
             </button>
           </div>

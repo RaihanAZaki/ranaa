@@ -34,7 +34,7 @@ export default function Hero({ daysTogether, onFireworks }) {
             Happy Birthday
           </h1>
           <h2 className="mt-2 font-script text-3xl text-deepRose sm:text-4xl md:text-5xl animate-fade-up animate-delay-300">
-            My Love, {CONFIG.partnerName} ♡
+            Ranaa, {CONFIG.partnerName} ♡
           </h2>
 
           <p className="mx-auto mt-7 max-w-xl text-sm leading-7 text-slate-700 md:mx-0 md:text-base md:leading-8 animate-fade-up animate-delay-500">

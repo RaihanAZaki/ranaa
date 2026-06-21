@@ -3,21 +3,21 @@ import { Cake, CalendarHeart, Heart } from "lucide-react";
 export const memories = [
   {
     icon: CalendarHeart,
-    title: "Pertama Bertemu",
-    date: "12 Januari 2023",
-    text: "Hari di mana semuanya berawal. Aku tidak pernah menyangka kamu akan menjadi seseorang yang sangat berarti."
+    title: "PDKT",
+    date: "28 Oktober 2025",
+    text: "Hari dimana kepencet call di dm IG tanpa sengaja, karena yang mencet Rais, eh malah keterusan"
   },
   {
     icon: Heart,
-    title: "Menjadi Kita",
+    title: "Pacaran",
     date: "28 Februari 2026",
-    text: "Dari banyak cerita sederhana, kita belajar saling memahami, saling menjaga, dan tumbuh bersama."
+    text: "Hari dimana kita jadian dengan cara nembak yang jelek banget tapi anehnya diterima"
   },
   {
     icon: Cake,
     title: "Hari Ini",
     date: "Ulang Tahunmu",
-    text: "Hari spesial untuk mengingatkan kamu bahwa kamu sangat dicintai dan sangat berharga."
+    text: "Hari spesial Ranaa, karena hari ini dia ulang tahun guys, please @prabowo ucapin dia ."
   }
 ];
 
@@ -28,8 +28,24 @@ export const wishes = [
 ];
 
 export const gallery = [
-  "/assets/memory-1.svg",
-  "/assets/memory-2.svg",
-  "/assets/memory-3.svg",
-  "/assets/memory-4.svg"
+  {
+    type: "image",
+    src: "/assets/gambar1.JPEG",
+    title: "Memory 1"
+  },
+  {
+    type: "video",
+    src: "/assets/vid1.MOV",
+    title: "Video Kita"
+  },
+  {
+    type: "image",
+    src: "/assets/gambar2.PNG",
+    title: "Memory 2"
+  },
+  {
+    type: "image",
+    src: "/assets/gambar3.JPG",
+    title: "Memory 3"
+  }
 ];

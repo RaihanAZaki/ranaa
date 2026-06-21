@@ -10,8 +10,11 @@ export default function WishSection() {
           <div className="text-center">
             <p className="font-semibold text-roseLove">Three Wishes</p>
             <h2 className="mt-2 font-script text-4xl font-bold text-deepRose sm:text-5xl md:text-6xl">
-              Doa Kecil Untukmu
+              Doa Singkat Untukmu
             </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
+            Percaya deh, doa-nya ga cuma ini kok, ini 3 biar estetik aja websitenya, tapi aslinya doanya banyak banget kok
+            </p>
           </div>
         </Reveal>
 

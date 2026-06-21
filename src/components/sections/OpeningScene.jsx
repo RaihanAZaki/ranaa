@@ -2,30 +2,28 @@ import { useState } from "react";
 import { Gift, Heart, X } from "lucide-react";
 import MagicParticles from "../effects/MagicParticles";
 import FloatingBalloons from "../effects/FloatingBalloons";
+// import BenMelet from "../../assets/ben.jpg";
 
-const UNLOCK_DATE = new Date("2026-06-23T00:00:00");
+const UNLOCK_DATE = new Date("2026-06-21T00:00:00");
 
 function canOpenSurprise() {
-  const now = new Date();
-  return now >= UNLOCK_DATE;
+  return new Date() >= UNLOCK_DATE;
 }
 
 function FloatingBenBackground() {
-  const items = Array.from({ length: 10 });
-
   return (
-    <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden">
-      {items.map((_, index) => (
+    <div className="pointer-events-none absolute inset-0 z-[3] overflow-hidden">
+      {Array.from({ length: 16 }).map((_, index) => (
         <img
           key={index}
-          src="/assets/ben.jpg"
+          src="/assets/ben.JPG"
           alt=""
-          className="floating-ben absolute h-16 w-16 rounded-full object-cover opacity-20 shadow-xl shadow-rose-300/40 sm:h-20 sm:w-20"
+          className="floating-ben absolute h-16 w-16 rounded-full border-2 border-white object-cover opacity-45 shadow-xl shadow-rose-300/60 sm:h-20 sm:w-20"
           style={{
-            left: `${(index * 13 + 5) % 100}%`,
-            bottom: `-${40 + (index % 3) * 20}px`,
-            animationDelay: `${index * 0.7}s`,
-            animationDuration: `${9 + (index % 5)}s`
+            left: `${(index * 17 + 4) % 100}%`,
+            bottom: `-${60 + (index % 4) * 30}px`,
+            animationDelay: `${index * 0.45}s`,
+            animationDuration: `${7 + (index % 6)}s`
           }}
         />
       ))}
@@ -53,14 +51,17 @@ export default function OpeningScene({ onOpen }) {
         isLeaving ? "pointer-events-none opacity-0 scale-105" : "opacity-100"
       }`}
     >
-      <div className="absolute inset-0 magical-grid" />
+      <div className="absolute inset-0 z-[1] magical-grid" />
 
       <FloatingBenBackground />
-      <MagicParticles amount={44} />
-      <FloatingBalloons amount={9} />
+
+      <div className="absolute inset-0 z-[2]">
+        <MagicParticles amount={44} />
+        <FloatingBalloons amount={9} />
+      </div>
 
       <div className="relative z-10 flex min-h-screen items-center justify-center px-4 text-center sm:px-5">
-        <div className="opening-card w-full max-w-xl rounded-[2rem] border border-white/80 bg-white/70 p-6 shadow-2xl shadow-rose-200/70 backdrop-blur-2xl sm:rounded-[3rem] sm:p-8 md:p-12">
+        <div className="opening-card w-full max-w-xl rounded-[2rem] border border-white/80 bg-white/75 p-6 shadow-2xl shadow-rose-200/70 backdrop-blur-2xl sm:rounded-[3rem] sm:p-8 md:p-12">
           <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-roseLove text-white shadow-2xl shadow-rose-300 animate-heart-glow sm:mb-7 sm:h-24 sm:w-24">
             <Gift className="h-9 w-9 animate-wiggle sm:h-11 sm:w-11" />
           </div>
@@ -70,7 +71,7 @@ export default function OpeningScene({ onOpen }) {
           </p>
 
           <h1 className="mt-4 font-script text-5xl font-bold leading-none text-deepRose shimmer-text sm:text-6xl md:text-7xl">
-            For You ♡
+            Ranaa B'Day
           </h1>
 
           <p className="mx-auto mt-5 max-w-md text-sm leading-7 text-slate-700 sm:text-base sm:leading-8">
@@ -96,7 +97,7 @@ export default function OpeningScene({ onOpen }) {
       </div>
 
       {showLockedModal && (
-        <div className="fixed inset-0 z-[140] flex items-center justify-center bg-slate-900/40 px-5 backdrop-blur-sm animate-fade-in">
+        <div className="fixed inset-0 z-[140] flex items-center justify-center bg-slate-900/35 px-5 backdrop-blur-[2px] animate-fade-in">
           <div className="relative w-full max-w-sm overflow-hidden rounded-[2rem] bg-white p-7 text-center shadow-2xl animate-pop-big">
             <button
               type="button"

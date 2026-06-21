@@ -59,7 +59,6 @@ function MagicalEnvelope({ open }) {
     <div className={`envelope-3d ${open ? "is-open" : ""}`}>
       <div className="letter-paper">
         <p className="font-script text-3xl text-roseLove">I love you</p>
-        <span>today, tomorrow, always</span>
       </div>
       <div className="envelope-back" />
       <div className="envelope-left" />
