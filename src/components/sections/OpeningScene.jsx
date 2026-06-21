@@ -4,7 +4,7 @@ import MagicParticles from "../effects/MagicParticles";
 import FloatingBalloons from "../effects/FloatingBalloons";
 // import BenMelet from "../../assets/ben.jpg";
 
-const UNLOCK_DATE = new Date("2026-06-21T00:00:00");
+const UNLOCK_DATE = new Date("2026-06-23T00:00:00");
 
 function canOpenSurprise() {
   return new Date() >= UNLOCK_DATE;
