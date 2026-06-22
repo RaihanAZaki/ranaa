@@ -1,13 +1,12 @@
-function getVisitorIp(req) {
-  const forwardedFor = req.headers["x-forwarded-for"];
-  const realIp = req.headers["x-real-ip"];
-  const cfIp = req.headers["cf-connecting-ip"];
+function getVisitorIp(request) {
+  const forwardedFor = request.headers.get("x-forwarded-for");
+  const realIp = request.headers.get("x-real-ip");
+  const cfIp = request.headers.get("cf-connecting-ip");
 
   let ip =
     cfIp ||
     realIp ||
     (forwardedFor ? forwardedFor.split(",")[0].trim() : null) ||
-    req.socket?.remoteAddress ||
     "unknown";
 
   if (ip === "::1") {
@@ -21,72 +20,82 @@ function getVisitorIp(req) {
   return ip;
 }
 
-export default function handler(req, res) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+export default {
+  async fetch(request) {
+    if (request.method === "OPTIONS") {
+      return new Response(null, {
+        status: 204,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type",
+        },
+      });
+    }
 
-  if (req.method === "OPTIONS") {
-    return res.status(204).end();
-  }
+    if (request.method === "GET") {
+      return Response.json({
+        status: "OK",
+        message: "Visitor API is running",
+      });
+    }
 
-  if (req.method === "GET") {
-    return res.status(200).json({
-      status: "OK",
-      message: "Visitor API is running",
-    });
-  }
+    if (request.method !== "POST") {
+      return Response.json(
+        {
+          message: "Method not allowed",
+        },
+        {
+          status: 405,
+        }
+      );
+    }
 
-  if (req.method !== "POST") {
-    return res.status(405).json({
-      message: "Method not allowed",
-    });
-  }
+    try {
+      const body = await request.json();
 
-  try {
-    const body = req.body || {};
+      const visitorLog = {
+        ip: getVisitorIp(request),
+        userAgent: body.userAgent || null,
+        language: body.language || null,
+        languages: body.languages || null,
+        platform: body.platform || null,
+        screenWidth: body.screenWidth || null,
+        screenHeight: body.screenHeight || null,
+        viewportWidth: body.viewportWidth || null,
+        viewportHeight: body.viewportHeight || null,
+        timezone: body.timezone || null,
+        page: body.page || null,
+        referrer: body.referrer || null,
+        accessedAtClient: body.accessedAtClient || null,
+        accessedAtServer: new Date().toISOString(),
+      };
 
-    const visitorLog = {
-      ip: getVisitorIp(req),
+      console.log("VISITOR_LOG:", JSON.stringify(visitorLog));
 
-      deviceBrand: body.deviceBrand || null,
-      deviceName: body.deviceName || null,
-      deviceType: body.deviceType || null,
-      osName: body.osName || null,
-      osVersion: body.osVersion || null,
-      isMobile: body.isMobile ?? null,
+      return Response.json(
+        {
+          message: "Visitor tracked",
+          data: visitorLog,
+        },
+        {
+          status: 201,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      );
+    } catch (error) {
+      console.error("Failed to track visitor:", error);
 
-      userAgent: body.userAgent || null,
-      language: body.language || null,
-      languages: body.languages || null,
-      platform: body.platform || null,
-      maxTouchPoints: body.maxTouchPoints || null,
-
-      screenWidth: body.screenWidth || null,
-      screenHeight: body.screenHeight || null,
-      viewportWidth: body.viewportWidth || null,
-      viewportHeight: body.viewportHeight || null,
-
-      timezone: body.timezone || null,
-      page: body.page || null,
-      referrer: body.referrer || null,
-
-      accessedAtClient: body.accessedAtClient || null,
-      accessedAtServer: new Date().toISOString(),
-    };
-
-    console.log("VISITOR_LOG:", JSON.stringify(visitorLog));
-
-    return res.status(201).json({
-      message: "Visitor tracked",
-      data: visitorLog,
-    });
-  } catch (error) {
-    console.error("Failed to track visitor:", error);
-
-    return res.status(500).json({
-      message: "Failed to track visitor",
-      error: error.message,
-    });
-  }
-}
+      return Response.json(
+        {
+          message: "Failed to track visitor",
+        },
+        {
+          status: 500,
+        }
+      );
+    }
+  },
+};
